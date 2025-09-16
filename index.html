@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anna - Fullstack Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Section -->
+            <div class="nav-brand">
+                <a href="#hero" class="brand-link">
+                    <span class="brand-text" data-i18n="brand">Anna's Portfolio</span>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <div class="nav-main">
+                <ul class="nav-links">
+                    <li>
+                        <a href="#hero" class="nav-link active" data-i18n="nav-me">About</a>
+                    </li>
+                    <li>
+                        <a href="#skills" class="nav-link" data-i18n="nav-skills">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="nav-link" data-i18n="nav-projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#activities" class="nav-link" data-i18n="nav-activities">Activities</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Controls Section -->
+            <div class="nav-controls">
+                <!-- Language Switcher -->
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="currentLang" title="Change language">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="Current language">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown-content">
+                        <div class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                            <span>EN</span>
+                        </div>
+                        <div class="lang-option" data-lang="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+                            <span>FR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <!-- Animated geometric shapes -->
+            <div class="floating-shape shape-triangle"></div>
+            <div class="floating-shape shape-circle"></div>
+            <div class="floating-shape shape-hexagon"></div>
+            <div class="floating-shape shape-square"></div>
+            <div class="floating-shape shape-pentagon"></div>
+            <div class="floating-shape shape-diamond"></div>
+            <div class="floating-shape shape-star"></div>
+
+            <!-- Floating orbs -->
+            <div class="floating-orb orb-1"></div>
+            <div class="floating-orb orb-2"></div>
+            <div class="floating-orb orb-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="typewriter-container" style="display: flex; justify-content: center; align-items: center;">
+
+                    <h1 class="hero-title" id="typewriter-text" data-i18n="hero-full-title"
+                        style="display: inline-block; white-space: nowrap;">
+                        Hi, I'm Anna
+                    </h1>
+                </div>
+
+
+                <p class="hero-description">
+                    <span data-i18n="hero-intro">A</span>
+                    <strong
+                        style="color: var(--accent-primary); text-decoration: underline; text-decoration-color: var(--accent-secondary);"
+                        data-i18n="hero-role">Full Stack developer</strong>
+                    <span data-i18n="hero-continuation">who transitioned from the world of finance to the universe of
+                        code. My experience with numbers taught me to value precision, and my ability to solve complex
+                        problems helped me find solutions. I'm now enthusiastically diving into new projects and am
+                        ready to apply my analytical experience and a fresh perspective in development. I'm prepared to
+                        grow and contribute, whether as part of an established team, in a dynamic startup environment,
+                        or through freelance projects.</span>
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span data-i18n="btn-contact">Get In Touch</span>
+                    </a>
+                    <a href="./assets/images/Anna Batoochirova_web_en.pdf" target="_blank" class="btn-secondary"
+                        id="downloadCV">
+                        <i class="fas fa-download"></i>
+                        <span data-i18n="btn-download-cv">Download CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with Orbital System -->
+    <section id="skills">
+        <h2 class="section-title" data-i18n="Orbital Skills System">Orbital Skills System</h2>
+        <p class="section-subtitle"
+            data-i18n="Explore my tech universe - click planets or orbits to hear their unique frequencies"> Explore my
+            tech universe - click planets or orbits to hear their unique frequencies</p>
+
+        <div class="solar-system" id="solarSystem">
+            <!-- Central Core -->
+            <div class="core" data-sound="C4" data-skill="core">
+                <div class="core-icon"><i class="fas fa-user-astronaut"></i></div>
+            </div>
+
+            <!-- Gravitational Field -->
+            <div class="gravity-field"></div>
+
+            <!-- Orbital Rings -->
+            <div class="orbit orbit-1" data-sound="C3" data-skill="orbit1">
+                <div class="skill-planet planet-html" data-sound="C4" data-skill="html">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                </div>
+                <div class="skill-planet planet-css" data-sound="D4" data-skill="css">
+                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                </div>
+                <div class="skill-planet planet-js" data-sound="E4" data-skill="js">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                </div>
+            </div>
+
+            <div class="orbit orbit-2" data-sound="D3" data-skill="orbit2">
+                <div class="skill-planet planet-react" data-sound="F4" data-skill="react">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                </div>
+                <div class="skill-planet planet-node" data-sound="G4" data-skill="node">
+                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                </div>
+                <div class="skill-planet planet-angular" data-sound="A4" data-skill="angular">
+                    <div class="skill-icon"><i class="fab fa-angular"></i></div>
+                </div>
+                <div class="skill-planet planet-typescript" data-sound="B4" data-skill="typescript">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                </div>
+            </div>
+
+            <div class="orbit orbit-3" data-sound="E3" data-skill="orbit3">
+                <div class="skill-planet planet-python" data-sound="C5" data-skill="python">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                </div>
+                <div class="skill-planet planet-csharp" data-sound="D5" data-skill="csharp">
+                    <div class="skill-icon"><i class="fas fa-hashtag"></i></div>
+                </div>
+                <div class="skill-planet planet-git" data-sound="E5" data-skill="git">
+                    <div class="skill-icon"><i class="fab fa-github"></i></div>
+                </div>
+                <div class="skill-planet planet-database" data-sound="F5" data-skill="database">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                </div>
+                <div class="skill-planet planet-postman" data-sound="G5" data-skill="postman">
+                    <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+                </div>
+            </div>
+
+            <!-- Cosmic dust particles -->
+            <div class="cosmic-dust" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+            <div class="cosmic-dust" style="top: 30%; right: 15%; animation-delay: 3s;"></div>
+            <div class="cosmic-dust" style="bottom: 20%; left: 30%; animation-delay: 6s;"></div>
+            <div class="cosmic-dust" style="bottom: 40%; right: 25%; animation-delay: 9s;"></div>
+            <div class="cosmic-dust" style="top: 60%; left: 80%; animation-delay: 12s;"></div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" onclick="playOrbitalSequence()">
+                <i class="fas fa-satellite"></i> <span data-i18n="Orbital Sequence">Orbital Sequence</span>
+            </button>
+            <button class="control-btn" onclick="playGravityWell()">
+                <i class="fas fa-atom"></i> <span data-i18n="Gravity Well">Gravity Well</span>
+            </button>
+            <button class="control-btn" onclick="pauseOrbits()">
+                <i class="fas fa-pause"></i> <span data-i18n="Pause Orbits">Pause Orbits</span>
+            </button>
+            <button class="control-btn" onclick="stopAll()">
+                <i class="fas fa-stop"></i> <span data-i18n="Stop All">Stop All</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title" data-i18n="Projects">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <div
+                        style="background: var(--accent-primary); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title" data-i18n="Smart Training Diary">Smart Training Diary</h4>
+                    <p class="project-description" data-i18n="MERN app to log workouts">A digital workout tracker for
+                        cardio and strength training.</p>
+                    <div class="project-links">
+                        <a href="https://batannaa.github.io/Strength-Training-Diary/" target="_blank"
+                            class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/batannaa/Strength-Training-Diary" target="_blank"
+                            class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div
+                        style="background: var(--accent-secondary); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title" data-i18n="Recipe Finder">Recipe Finder</h4>
+                    <p class="project-description" data-i18n="Search recipes by ingredients">Search recipes by
+                        ingredients, save favorites with beautiful interface</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div
+                        style="background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-primary)); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title" data-i18n="Art Memory Game">Art Memory Game</h4>
+                    <p class="project-description" data-i18n="Test your memory">Test your memory with this fun
+                        art-themed interactive game</p>
+                    <div class="project-links">
+                        <a href="https://batannaa.github.io/GameMemo/" target="_blank" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/batannaa/GameMemo" target="_blank" class="project-link"><i
+                                class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div
+                        style="background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary)); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title" data-i18n="PARTAGE-Quebec">PARTAGE-Quebec</h4>
+                    <p class="project-description"
+                        data-i18n="Electric Vehicle Charging Infrastructure Management System">Electric Vehicle Charging
+                        Infrastructure Management System</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/batannaa/ProjetMVC" target="_blank" class="project-link"><i
+                                class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div
+                        style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title" data-i18n="Weather Dashboard">Weather Dashboard</h4>
+                    <p class="project-description" data-i18n="Real-time weather app">Real-time weather app with
+                        geolocation & forecasts</p>
+                    <div class="project-links">
+                        <a href="https://batannaa.github.io/WeatherForecast/" target="_blank" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/batannaa/WeatherForecast" target="_blank" class="project-link"><i
+                                class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div
+                        style="background: var(--accent-tertiary); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title" data-i18n="REST-APIs">REST APIs</h4>
+                    <p class="project-description" data-i18n="Making GET, POST, PUT, PATCH and DELETE API Requests">
+                        Making GET, POST, PUT, PATCH and DELETE API Requests</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/batannaa/REST-APIs" target="_blank" class="project-link"><i
+                                class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities">
+        <h2 class="section-title" data-i18n="My Top 5 Activities">My Top 5 Activities</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.1rem;"
+            data-i18n="My favorite ways to stay active">My all-time favorite ways to stay active and explore</p>
+
+        <div class="activities-grid">
+            <div class="activity-card">
+                <h3 class="activity-title" data-i18n="Cycling">🚴‍♀️ Cycling</h3>
+                <p data-i18n="Cycling description">There's nothing like the freedom of cruising with the wind. An
+                    amazing way to explore new places and stay fit!</p>
+            </div>
+
+            <div class="activity-card">
+                <h3 class="activity-title" data-i18n="Hiking">⛰️ Hiking</h3>
+                <p data-i18n="Hiking description">I love immersing myself in nature. Every hike is a new adventure and a
+                    chance to see incredible landscapes.</p>
+            </div>
+
+            <div class="activity-card">
+                <h3 class="activity-title" data-i18n="Strength Training">💪 Strength Training</h3>
+                <p data-i18n="Strength description">The feeling of strength and progress after each workout is
+                    incomparable. It's not just about physical fitness, it's about building mental resilience too.</p>
+            </div>
+
+            <div class="activity-card">
+                <h3 class="activity-title" data-i18n="Zumba">💃 Zumba</h3>
+                <p data-i18n="Zumba description">Dancing my worries away! It's pure joy, incredible energy, and a
+                    fantastic workout all rolled into one.</p>
+            </div>
+
+            <div class="activity-card">
+                <h3 class="activity-title" data-i18n="Swimming">🏊‍♀️ Swimming</h3>
+                <p data-i18n="Swimming description">The water can be a challenge for me, but I'm determined to overcome
+                    my apprehension. On my way to swim like a mermaid! 🧜‍♀️✨</p>
+            </div>
+
+            <div class="activity-card interactive-card">
+                <h3 class="activity-title" data-i18n="Your favorite activity">🤔 What's your favorite activity?</h3>
+                <p data-i18n="Activity recommendation">I'm always looking for new ways to stay active and explore.
+                    What's one activity you'd recommend?</p>
+                <div class="contact-icon">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title" data-i18n="Contact Me">Contact Me</h2>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xgvzpvyr" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-input" data-i18n-placeholder="Your Name"
+                        placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-input" data-i18n-placeholder="Your Email"
+                        placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-textarea" rows="5" data-i18n-placeholder="Your Message"
+                        placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">
+                    <i class="fas fa-paper-plane"></i> <span data-i18n="Send Message">Send Message</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/batannaa" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/anna-b-36a9a96b" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:annabat80@gmail.com" target="_blank">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+
+        <p class="copyright-modern">
+            <span>©</span>
+            <span data-i18n="copyright-year">2025</span>
+            <span data-i18n="copyright-name">Anna Batoochirova</span>
+            <span>•</span>
+            <span data-i18n="made-with">Made with</span>
+            <span class="heart-icon">❤️</span>
+        </p>
+
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.14/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/1.4.1/i18nextHttpBackend.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
