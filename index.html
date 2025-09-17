@@ -17,9 +17,42 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <!-- Brand Section -->
+            <!-- Brand Section with Cheerful Avatar -->
             <div class="nav-brand">
                 <a href="#hero" class="brand-link">
+                    <!-- Cheerful Avatar Section -->
+                    <div class="nav-hero-avatar">
+                        <div class="nav-avatar-container">
+                            <div class="nav-avatar-circle">
+                                <div class="nav-avatar-inner">
+                                    <div class="nav-avatar-face">
+                                        <div class="nav-avatar-hair"></div>
+                                        <div class="nav-avatar-eyes">
+                                            <div class="nav-eye nav-eye-left"></div>
+                                            <div class="nav-eye nav-eye-right"></div>
+                                        </div>
+                                        <div class="nav-avatar-nose"></div>
+                                        <div class="nav-avatar-mouth"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Sparkles around avatar -->
+                            <div class="nav-sparkles">
+                                <div class="nav-sparkle">✨</div>
+                                <div class="nav-sparkle">⭐</div>
+                                <div class="nav-sparkle">✨</div>
+                                <div class="nav-sparkle">⭐</div>
+                            </div>
+
+                            <!-- Floating Hearts on Hover -->
+                            <div class="nav-floating-hearts">
+                                <div class="nav-heart">💖</div>
+                                <div class="nav-heart">💕</div>
+                                <div class="nav-heart">💖</div>
+                            </div>
+                        </div>
+                    </div>
                     <span class="brand-text" data-i18n="brand">Anna's Portfolio</span>
                 </a>
             </div>
@@ -91,51 +124,95 @@
             <div class="floating-shape shape-diamond"></div>
             <div class="floating-shape shape-star"></div>
 
+            <!-- Additional animated elements -->
+            <div class="floating-tech-icon tech-react"><i class="fab fa-react"></i></div>
+            <div class="floating-tech-icon tech-js"><i class="fab fa-js-square"></i></div>
+            <div class="floating-tech-icon tech-code"><i class="fas fa-code"></i></div>
+            <div class="floating-tech-icon tech-database"><i class="fas fa-database"></i></div>
+
+            <!-- Floating code snippets -->
+            <div class="floating-code-snippet code-snippet-1">{ }</div>
+            <div class="floating-code-snippet code-snippet-2">&lt;/&gt;</div>
+            <div class="floating-code-snippet code-snippet-3">( )</div>
+
             <!-- Floating orbs -->
             <div class="floating-orb orb-1"></div>
             <div class="floating-orb orb-2"></div>
             <div class="floating-orb orb-3"></div>
+
+            <!-- Animated particles -->
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
         </div>
 
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="typewriter-container" style="display: flex; justify-content: center; align-items: center;">
 
-                    <h1 class="hero-title" id="typewriter-text" data-i18n="hero-full-title"
-                        style="display: inline-block; white-space: nowrap;">
-                        Hi, I'm Anna
-                    </h1>
+        <div class="hero-text">
+            <div class="typewriter-container">
+                <h1 class="hero-title" id="typewriter-text" data-i18n="hero-full-title">
+                    Hi, I'm Anna
+                </h1>
+            </div>
+
+            <!-- Personal tagline -->
+            <div class="hero-tagline">
+                <p data-i18n="hero-tagline">I love turning complex problems into elegant solutions</p>
+            </div>
+
+            <p class="hero-description">
+                <span data-i18n="hero-intro">A</span>
+                <strong class="hero-role" data-i18n="hero-role">Full Stack developer</strong>
+                <span data-i18n="hero-continuation">with a background in finance.
+                    My work with numbers taught me attention to detail, and now I bring that precision to
+                    code. I'm passionate about creating meaningful digital experiences that make a
+                    difference.</span>
+            </p>
+
+            <!-- Quick stats -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong class="stat-number">2</strong>
+                    <strong class="stat-label" data-i18n="career-fields">Career Fields</strong>
                 </div>
-
-
-                <p class="hero-description">
-                    <span data-i18n="hero-intro">A</span>
-                    <strong
-                        style="color: var(--accent-primary); text-decoration: underline; text-decoration-color: var(--accent-secondary);"
-                        data-i18n="hero-role">Full Stack developer</strong>
-                    <span data-i18n="hero-continuation">who transitioned from the world of finance to the universe of
-                        code. My experience with numbers taught me to value precision, and my ability to solve complex
-                        problems helped me find solutions. I'm now enthusiastically diving into new projects and am
-                        ready to apply my analytical experience and a fresh perspective in development. I'm prepared to
-                        grow and contribute, whether as part of an established team, in a dynamic startup environment,
-                        or through freelance projects.</span>
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        <span data-i18n="btn-contact">Get In Touch</span>
-                    </a>
-                    <a href="./assets/images/Anna Batoochirova_web_en.pdf" target="_blank" class="btn-secondary"
-                        id="downloadCV">
-                        <i class="fas fa-download"></i>
-                        <span data-i18n="btn-download-cv">Download CV</span>
-                    </a>
+                <div class="stat-item">
+                    <strong class="stat-number">∞</strong>
+                    <strong class="stat-label" data-i18n="creative-solutions">Creative Solutions</strong>
+                </div>
+                <div class="stat-item">
+                    <strong class="stat-number">100%</strong>
+                    <strong class="stat-label" data-i18n="passion-driven">Passion Driven</strong>
                 </div>
             </div>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    <span data-i18n="btn-contact">Get In Touch</span>
+                </a>
+                <a href="./assets/images/Anna Batoochirova_web_en.pdf" target="_blank" class="btn-secondary"
+                    id="downloadCV">
+                    <i class="fas fa-download"></i>
+                    <span data-i18n="btn-download-cv">Download CV</span>
+                </a>
+            </div>
+
+            <!-- Social links -->
+            <div class="hero-social">
+                <a href="https://github.com/batannaa" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/anna-b-36a9a96b" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:annabat80@gmail.com" target="_blank" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
         </div>
     </section>
-
     <!-- Skills Section with Orbital System -->
     <section id="skills">
         <h2 class="section-title" data-i18n="Orbital Skills System">Orbital Skills System</h2>

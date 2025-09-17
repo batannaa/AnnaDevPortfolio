@@ -457,174 +457,99 @@ function initOrbitalSkills() {
   }, 2000);
 }
 
-// Initialize interactive copyright
+// InITIALIZATION OF COPYRIGHT EFFECTS
 function initCopyrightEffects() {
   const copyrightElement = document.querySelector(".copyright-modern");
   if (!copyrightElement) return;
 
-  // Add event listeners
-  addClickEffects(copyrightElement);
-  addKeyboardSupport(copyrightElement);
-  addIntersectionObserver(copyrightElement);
-  addSpecialEffects(copyrightElement);
+  // Update year
+  updateCopyrightYear();
+
+  // Add simple effects
+  addHeartHoverEffects(copyrightElement);
+  addSparkleClickEffect(copyrightElement);
 }
 
-// Эффекты при клике
-function addClickEffects(element) {
+// Automatic heart explosion on hover over heart
+function addHeartHoverEffects(element) {
   const heartIcon = element.querySelector(".heart-icon");
 
   if (heartIcon) {
-    heartIcon.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+    let hoverTimeout;
 
-      // Создаем эффект "взрыва" сердечек
-      createHeartExplosion(e.target);
+    heartIcon.addEventListener("mouseenter", () => {
+      // Quick heart explosion without delay
+      hoverTimeout = setTimeout(() => {
+        createHeartExplosion(heartIcon);
+      }, 300); // Short delay of 0.3 seconds
+    });
 
-      // Вибрация (если поддерживается)
-      if (navigator.vibrate) {
-        navigator.vibrate([50, 30, 50]);
-      }
+    heartIcon.addEventListener("mouseleave", () => {
+      clearTimeout(hoverTimeout);
     });
   }
+}
 
-  // Клик по всему копирайту
+// Sparkle effect on click for copyright
+function addSparkleClickEffect(element) {
   element.addEventListener("click", () => {
-    // Добавляем временный класс для эффекта
+    // Add sparkle class
     element.classList.add("sparkle");
+
+    // Remove after 2 seconds
     setTimeout(() => {
       element.classList.remove("sparkle");
-    }, 3000);
+    }, 2000);
   });
 }
 
-// Создание эффекта взрыва сердечек
+// Quick heart explosion
 function createHeartExplosion(heartElement) {
-  const hearts = ["💖", "💝", "💗", "💓", "💕"];
+  const hearts = ["💖", "💝", "💗", "💓", "💕", "❤️", "💘"];
   const container = heartElement.closest(".copyright-modern");
 
-  for (let i = 0; i < 8; i++) {
+  // Create 6 hearts for quick effect
+  for (let i = 0; i < 6; i++) {
     const floatingHeart = document.createElement("span");
     floatingHeart.textContent =
       hearts[Math.floor(Math.random() * hearts.length)];
     floatingHeart.className = "floating-heart";
 
-    // Позиционирование относительно сердечка
+    // Positioning relative to the heart
     const rect = heartElement.getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
 
     floatingHeart.style.cssText = `
-            position: absolute;
-            left: ${rect.left - containerRect.left + rect.width / 2}px;
-            top: ${rect.top - containerRect.top + rect.height / 2}px;
-            font-size: 14px;
-            pointer-events: none;
-            z-index: 1000;
-            animation: floatAway ${1 + Math.random()}s ease-out forwards;
-            animation-delay: ${Math.random() * 0.3}s;
-            transform: translate(-50%, -50%) rotate(${Math.random() * 360}deg);
-        `;
+      position: absolute;
+      left: ${rect.left - containerRect.left + rect.width / 2}px;
+      top: ${rect.top - containerRect.top + rect.height / 2}px;
+      font-size: 12px;
+      pointer-events: none;
+      z-index: 1000;
+      animation: floatAway ${0.8 + Math.random() * 0.4}s ease-out forwards;
+      animation-delay: ${Math.random() * 0.2}s;
+      transform: translate(-50%, -50%) rotate(${Math.random() * 360}deg);
+    `;
 
     container.style.position = "relative";
     container.appendChild(floatingHeart);
 
-    // Удаляем элемент после анимации
+    // Remove after animation
     setTimeout(() => {
       if (floatingHeart.parentNode) {
         floatingHeart.remove();
       }
-    }, 2000);
+    }, 1200);
   }
 }
 
-// Поддержка клавиатуры
-function addKeyboardSupport(element) {
-  element.setAttribute("tabindex", "0");
-  element.setAttribute("role", "button");
-  element.setAttribute(
-    "aria-label",
-    "Copyright information with interactive heart"
-  );
-
-  element.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      element.click();
-    }
-  });
-}
-
-// Intersection Observer для появления
-function addIntersectionObserver(element) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Добавляем класс для анимации появления
-          element.classList.add("animate-in");
-
-          // Постепенное появление каждого элемента
-          const spans = element.querySelectorAll("span");
-          spans.forEach((span, index) => {
-            span.style.opacity = "0";
-            span.style.transform = "translateY(10px)";
-
-            setTimeout(() => {
-              span.style.transition = "all 0.4s ease";
-              span.style.opacity = "1";
-              span.style.transform = "translateY(0)";
-            }, index * 100);
-          });
-
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  observer.observe(element);
-}
-
-// Специальные эффекты
-function addSpecialEffects(element) {
-  // Эффект радуги при долгом наведении
-  let rainbowTimeout;
-
-  element.addEventListener("mouseenter", () => {
-    rainbowTimeout = setTimeout(() => {
-      element.style.background =
-        "linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57)";
-      element.style.backgroundSize = "400% 400%";
-      element.style.webkitBackgroundClip = "text";
-      element.style.backgroundClip = "text";
-      element.style.color = "transparent";
-      element.style.animation = "rainbow 2s ease-in-out infinite";
-    }, 2000);
-  });
-
-  element.addEventListener("mouseleave", () => {
-    clearTimeout(rainbowTimeout);
-    element.style.background = "none";
-    element.style.color = "";
-    element.style.animation = "";
-  });
-}
-
-// Обновление года автоматически
+// Simple year update
 function updateCopyrightYear() {
   const yearElement = document.querySelector('[data-i18n="copyright-year"]');
   if (yearElement) {
     const currentYear = new Date().getFullYear();
-    // Обновляем только если год изменился
     if (yearElement.textContent !== currentYear.toString()) {
       yearElement.textContent = currentYear;
-
-      // Добавляем эффект обновления
-      yearElement.style.animation = "yearUpdate 0.6s ease";
-      setTimeout(() => {
-        yearElement.style.animation = "";
-      }, 600);
     }
   }
 }
@@ -874,9 +799,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initInteractiveElements();
   generateCosmicDust();
 
-  // Initialize interactive copyright
+  // ИНИЦИАЛИЗАЦИЯ УПРОЩЕННОГО КОПИРАЙТА
   initCopyrightEffects();
-  updateCopyrightYear();
 
   // Language dropdown handlers with enhanced update and debugging
   document.querySelectorAll(".lang-option").forEach((option) => {
@@ -946,13 +870,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("=== DOM ELEMENTS ===");
     debugTranslations();
     console.log("=== END FULL DIAGNOSTIC ===");
-  };
-
-  // Экспортируем функции для интерактивного копирайта
-  window.copyrightEffects = {
-    init: initCopyrightEffects,
-    updateYear: updateCopyrightYear,
-    createHeartExplosion: createHeartExplosion,
   };
 
   setTimeout(() => {
