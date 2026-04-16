@@ -38,7 +38,7 @@ i18next
         console.log("Current language:", i18next.language);
         console.log(
           "Available resources:",
-          i18next.services.resourceStore.data
+          i18next.services.resourceStore.data,
         );
 
         updateContent();
@@ -48,7 +48,7 @@ i18next
           setTimeout(() => forceUpdateAllTranslations(), 100);
         }, 500);
       }
-    }
+    },
   );
 
 // TRANSLATION FUNCTIONS
@@ -67,7 +67,7 @@ function debugTranslations() {
       `${
         index + 1
       }. Key: "${key}" | Translation: "${translation}" | Current: "${currentContent}" | Element:`,
-      element
+      element,
     );
   });
   console.log("=== END DEBUG ===");
@@ -172,7 +172,7 @@ function updateLanguageIndicator(lng) {
     });
 
   const activeFlag = document.querySelector(
-    `.lang-flag[onclick*="'${lng}'"], .lang-switcher img[onclick*="'${lng}'"]`
+    `.lang-flag[onclick*="'${lng}'"], .lang-switcher img[onclick*="'${lng}'"]`,
   );
   if (activeFlag) {
     activeFlag.classList.add("active");
@@ -268,8 +268,9 @@ const waveTypes = {
 
 function initOrbitalAudio() {
   if (!orbitalAudioContext) {
-    orbitalAudioContext = new (window.AudioContext ||
-      window.webkitAudioContext)();
+    orbitalAudioContext = new (
+      window.AudioContext || window.webkitAudioContext
+    )();
   }
 }
 
@@ -277,7 +278,7 @@ function playOrbitalNote(
   frequency,
   duration = 2,
   waveType = "sine",
-  gain = 0.25
+  gain = 0.25,
 ) {
   if (!orbitalAudioContext) return;
 
@@ -291,7 +292,7 @@ function playOrbitalNote(
 
   oscillator.frequency.setValueAtTime(
     frequency,
-    orbitalAudioContext.currentTime
+    orbitalAudioContext.currentTime,
   );
   oscillator.type = waveType;
 
@@ -301,11 +302,11 @@ function playOrbitalNote(
   gainNode.gain.setValueAtTime(0, orbitalAudioContext.currentTime);
   gainNode.gain.linearRampToValueAtTime(
     orbitalMasterVolume * gain,
-    orbitalAudioContext.currentTime + 0.1
+    orbitalAudioContext.currentTime + 0.1,
   );
   gainNode.gain.exponentialRampToValueAtTime(
     0.001,
-    orbitalAudioContext.currentTime + duration
+    orbitalAudioContext.currentTime + duration,
   );
 
   oscillator.start(orbitalAudioContext.currentTime);
@@ -852,7 +853,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Browser language:", navigator.language);
     console.log(
       "Available languages in i18next:",
-      Object.keys(i18next.services.resourceStore.data)
+      Object.keys(i18next.services.resourceStore.data),
     );
 
     ["en", "fr"].forEach((lang) => {
@@ -916,4 +917,12 @@ i18next.on("failedLoading", function (lng, ns, msg) {
 
 i18next.on("missingKey", function (lng, namespace, key, res) {
   console.warn("=== I18N MISSING KEY ===", lng, namespace, key, res);
+});
+
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  document.querySelector(".hero").style.transform =
+    `rotateX(${-y}deg) rotateY(${x}deg)`;
 });
